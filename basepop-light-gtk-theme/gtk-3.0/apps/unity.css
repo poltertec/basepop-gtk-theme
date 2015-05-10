@@ -5,46 +5,57 @@ UnityDecoration {
     -UnityDecoration-shadow-offset-x: 0px;
     -UnityDecoration-shadow-offset-y: 3px;
     -UnityDecoration-active-shadow-color: alpha(@dark_shadow, 0.75);
-    -UnityDecoration-active-shadow-radius: 9px;
+    -UnityDecoration-active-shadow-radius: 30px;
     -UnityDecoration-inactive-shadow-color: alpha(@dark_shadow, 0.5);
-    -UnityDecoration-inactive-shadow-radius: 6px;
+    -UnityDecoration-inactive-shadow-radius: 25px;
 
     -UnityDecoration-glow-size: 10px;
-    -UnityDecoration-glow-color: @theme_selected_bg_color;
+    -UnityDecoration-glow-color: @selected_bg_color;
 
     -UnityDecoration-title-indent: 10px;
-    -UnityDecoration-title-fade: 50px;
+    -UnityDecoration-title-fade: 35px;
     -UnityDecoration-title-alignment: 0.0;
 }
 
 UnityDecoration.top {
-    border: 1px solid @titlebar_bg_color;
-    border-bottom-width: 0;
+    border: none;
     border-radius: 5px 5px 0 0;
-    padding: 1px 8px 0 8px;
-    background-color: @titlebar_bg_color;
-    color: @titlebar_fg_color;
+    padding: 1px 5px 0px 5px;
+    background-color: @header_bg_color;
+    background-clip: border-box;
+    color: @header_fg_color;
     text-shadow: none;
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.1);
 }
 
 UnityDecoration.top:backdrop {
-    border: 1px solid @titlebar_bg_color;    
-    border-bottom-width: 0;
-    background-color: @titlebar_bg_color;
-    color: mix(@titlebar_fg_color, @titlebar_bg_color, 0.2);
+    border: none;
+    background-color: @header_bg_color;
+    background-clip: border-box;
+    color: mix(@header_fg_color, @header_bg_color, 0.2);
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.1);
 }
 
 UnityDecoration.left,
 UnityDecoration.right,
 UnityDecoration.bottom {
-    background-color: @theme_bg_color;
+    background-color: @header_bg_color;
+    background-size: 1px 70px;
+    background-repeat: repeat-x;
 }
 
 UnityDecoration.left:backdrop,
 UnityDecoration.right:backdrop,
 UnityDecoration.bottom:backdrop {
-    background-color: @theme_bg_color;
+    background-color: @header_bg_color;
 }
+
+UnityDecoration.menuitem {
+    border-radius: 0px;
+    background-color: @selected_bg_color;
+}
+
+/* Panel Style */
 
 UnityPanelWidget,
 .unity-panel {
@@ -52,7 +63,7 @@ UnityPanelWidget,
     border-style: solid;
     border-color: @panel_bg_color;
     background-color: @panel_bg_color; /* the theme_bg_color of the dark theme */
-    color: @theme_bg_color;
+    color: @panel_fg_color;
 }
 
 .unity-panel.menubar,
@@ -67,8 +78,8 @@ UnityPanelWidget,
 
 .unity-panel.menubar.menuitem:hover,
 .unity-panel.menubar .menuitem *:hover {
-    border-color: mix(@panel_bg_color, @panel_fg_color, 0.2);
-    background-color: mix(@panel_bg_color, @panel_fg_color, 0.2);
+    border-color: @selected_bg_color; /*mix(@panel_bg_color, @panel_fg_color, 0.2);*/
+    background-color: @panel_bg_color; /*mix(@panel_bg_color, @panel_fg_color, 0.2);*/
     background-image: none;
     color: shade(@panel_fg_color, 1.08);
 }
