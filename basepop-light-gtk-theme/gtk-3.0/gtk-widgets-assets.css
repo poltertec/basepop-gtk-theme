@@ -1,3 +1,36 @@
+/******************
+ * window actions *
+ ******************/
+/* minimize */
+.titlebar .titlebutton.minimize {
+    background-image: -gtk-scaled(url("assets/min.png"),url("assets/min@2.png"));
+}
+
+.titlebar .titlebutton.minimize:hover,
+.titlebar .titlebutton.minimize:active {
+    background-image: -gtk-scaled(url("assets/min_prelight.png"),url("assets/min_prelight@2.png"));
+}
+
+/* maximize */
+.titlebar .titlebutton.maximize {
+    background-image: -gtk-scaled(url("assets/max.png"),url("assets/max@2.png"));
+}
+
+.titlebar .titlebutton.maximize:hover, 
+.titlebar .titlebutton.maximize:active {
+    background-image: -gtk-scaled(url("assets/max_prelight.png"),url("assets/max_prelight@2.png"));
+}
+
+/* close */
+.titlebar .titlebutton.close {
+    background-image: -gtk-scaled(url("assets/close.png"),url("assets/close@2.png"));
+}
+
+.titlebar .titlebutton.close:hover,
+.titlebar .titlebutton.close:active {
+    background-image: -gtk-scaled(url("assets/close_prelight.png"),url("assets/close_prelight@2.png"));
+}
+
 /*******************
  * check and radio *
  *******************/
@@ -184,4 +217,19 @@ GtkSwitch.slider:active {
 GtkSwitch.slider:insensitive,
 GtkSwitch.slider:active:insensitive {
     background-image: -gtk-scaled(url("assets/switch-slider-insensitive.svg"),url("assets/switch-slider-insensitive@2.svg"));
+}
+
+/*******************
+ * GtkScale slider *
+ *******************/
+.scale.slider {
+    background: -gtk-scaled(url("assets/scale-slider.png"),url("assets/scale-slider@2.png"));
+}
+
+.scale.slider:hover {
+    background: -gtk-scaled(url("assets/scale-slider-hover.png"),url("assets/scale-slider-hover@2.png"));
+}
+
+.scale.slider:insensitive {
+    background: -gtk-scaled(url("assets/scale-slider-insensitive.png"),url("assets/scale-slider-insensitive@2.png"));
 }
